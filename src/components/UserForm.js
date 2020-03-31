@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import FormUserDetails from './FormUserDetails.js';
+import FormPersonalDetails from './FormPersonalDetails.js';
+import Confirm from './Confirm.js';
+import Success from './Success.js';
 
 export class UserForm extends Component {
 state = {
@@ -45,15 +48,15 @@ handleChange = input => e  => {
                 )
             case 2: 
                 return (
-                    <h2>FormPersonalDetails</h2>
+                    <FormPersonalDetails nextStep={this.nextStep} handleChange={this.handleChange} values={values}/>
                 )
             case 3:
                 return (
-                    <h2>Confirm</h2>
+                    <Confirm nextStep={this.nextStep} values={values}/>
                 )
             case 4:
                 return (
-                    <h2>Success</h2>
+                    <Success />
                 )               
         }
     }
